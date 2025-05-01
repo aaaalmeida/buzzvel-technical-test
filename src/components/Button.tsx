@@ -1,29 +1,43 @@
 import { FC, MouseEventHandler, useState } from "react"
 import { Icon } from "@iconify-icon/react"
-import colors from "@assets/colors.json"
+import colors from "@assets/colors/colors.json"
+import ColorEnum from "@assets/colors/colorsEnum"
 
-type Size = "SM" | "MD" | "LG"
-type Color = "WHITE" | "BLUE" | "HOVERBLUE" | "ORANGE" | "BLACK"
+type Size = "XM" | "SM" | "MD" | "LG"
 type IconPosition = "LEFT" | "RIGHT"
+type IconRotation = 0 | 1 | 2 | 3
+type FontSize = "SM" | "BASE" | "XL" | "XXL"
 
 interface IButton {
     onClick: MouseEventHandler,
     text?: string,
     icon?: string,
     iconPosition?: IconPosition,
+    rotateIcon?: IconRotation,
     size?: Size,
+    circle?: boolean,
+    bgColor?: ColorEnum,
+    fontColor?: ColorEnum,
     border?: boolean,
-    bgColor?: Color,
-    fontColor?: Color,
-    hoverBackgroundColor?: Color,
-    hoverFontColor?: Color,
-    align?: Align
+    borderColor?: ColorEnum,
+    hoverBackgroundColor?: ColorEnum,
+    hoverFontColor?: ColorEnum,
+    align?: Align,
+    fontSize?: FontSize
 }
 
 const sizeClasses = {
+    XM: "size-12 p-2",
     SM: "w-24 h-12 p-2",
     MD: "w-32 h-16 p-4",
     LG: "w-40 h-16 p-6"
+}
+
+const fontSizeClasses = {
+    SM: "text-sm",
+    BASE: "text-base",
+    XL: "text-xl",
+    XXL: "text-2xl"
 }
 
 export enum Align {
@@ -37,14 +51,18 @@ const Button: FC<IButton> = ({
     onClick,
     text,
     icon,
+    iconPosition = "RIGHT",
+    rotateIcon = 0,
     size = "SM",
     bgColor = "WHITE",
     fontColor = "BLACK",
+    borderColor = "BLACK",
     border = false,
-    iconPosition = "RIGHT",
+    circle = false,
     hoverBackgroundColor,
     hoverFontColor,
-    align = Align.CENTER
+    align = Align.CENTER,
+    fontSize = "BASE"
 }) => {
     const [isHovered, setIsHovered] = useState<boolean>(false)
     const iconDirection = iconPosition === "RIGHT" ? "flex-row" : "flex-row-reverse"
@@ -56,13 +74,22 @@ const Button: FC<IButton> = ({
             style={{
                 backgroundColor: (isHovered && hoverBackgroundColor) ? colors[hoverBackgroundColor] : colors[bgColor],
                 color: (isHovered && hoverFontColor) ? colors[hoverFontColor] : colors[fontColor],
+                borderColor: borderColor,
                 textAlign: align
             }}
-            className={`flex ${iconDirection} whitespace-nowrap gap-2 items-center justify-center rounded text-xl ${sizeClasses[size]} ${border ? "border border-black" : ""}`}
+            className={`flex ${iconDirection} 
+                whitespace-nowrap gap-2 items-center justify-center 
+                ${fontSizeClasses[fontSize]}
+                ${sizeClasses[size]} 
+                ${circle ? "rounded-full" : "rounded"}
+                ${border ? "border-2 border-black" : ""}`}
             onClick={onClick}>
             {text && <p>{text}</p>}
             {icon &&
-                <Icon icon={icon} />
+                <Icon
+                    icon={icon}
+                    rotate={rotateIcon}
+                />
             }
         </button>
     )

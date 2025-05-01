@@ -1,7 +1,7 @@
 import { FC } from "react"
 import Table from "@components/Table"
 import Button, { Align } from "@components/Button"
-import colors from "@assets/colors.json"
+import colors from "@assets/colors/colors.json"
 
 interface IItem {
     n: string, // name
@@ -59,10 +59,8 @@ const Footer: FC = () => {
             style={{ backgroundColor: colors.BLUE }}
             className="text-white p-4">
             <div className="flex justify-between items-center gap-4">
-                <img src="/teach-logo.png" alt="Teach Logo" />
+                <img src="/teach-logo-branco.png" alt="Teach Logo" />
                 <Table
-                    bgColor="#123123"
-                    hoverColor="#555"
                     collumnTitle={renderTableColumnTitle()}
                     rowsContent={renderTableRows()}
                 />

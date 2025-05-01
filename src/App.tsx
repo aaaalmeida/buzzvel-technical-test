@@ -1,17 +1,8 @@
-import Button from "@components/Button"
-import Footer from "@components/Footer"
+import FrontPage from "@pages/FrontPage"
 
 const App = () => {
   return (
-    <>
-      {/* <Button 
-      onClick={()=>{}}
-      text="ola"
-      icon="material-symbols:bomb"
-      border
-    /> */}
-      <Footer />
-    </>
+    <FrontPage />
   )
 }
 
