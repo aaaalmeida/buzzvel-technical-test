@@ -31,8 +31,6 @@ const Carousel = forwardRef<ICarouselHandle, ICarouselProps>(
     ) => {
         const containerRef = useRef<HTMLDivElement>(null)
 
-        const scrollByAmount = itemWidth * itemsPerPage
-
         const handleNext = () => {
             const container = containerRef.current
             // when carousel is created, containerRef is null

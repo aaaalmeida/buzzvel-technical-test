@@ -29,7 +29,7 @@ const Section: FC<ISection> = ({
     }
 
     const baseClasses = [
-        "py-8 px-4",
+        "p-10",
         flex ? "flex justify-center items-center" : "text-center",
         flex ? (direction === "column" ? "flex-col" : "flex-row") : ""
     ]

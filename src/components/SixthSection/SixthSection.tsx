@@ -1,4 +1,4 @@
-import Button from "@components/Button"
+import Button, { FontSize } from "@components/Button"
 import colors from "@assets/colors/colors.json"
 import OpinionCard, { IOpinionCard } from "@components/SixthSection/OpinionCard"
 import user1 from "@components/SixthSection/assets/user1.png"
@@ -70,8 +70,10 @@ const SixthSection: FC = () => {
                         <Button
                             onClick={() => carouselRef.current?.handlePrev()}
                             icon="weui:arrow-filled"
-                            size="XM"
-                            fontSize="XXL"
+                            height={12}
+                            width={12}
+                            padding={2}
+                            fontSize={FontSize.XXL}
                             fontColor="ORANGE"
                             border
                             borderColor="ORANGE"
@@ -81,8 +83,10 @@ const SixthSection: FC = () => {
                         <Button
                             onClick={() => carouselRef.current?.handleNext()}
                             icon="weui:arrow-filled"
-                            size="XM"
-                            fontSize="XXL"
+                            height={12}
+                            width={12}
+                            padding={2}
+                            fontSize={FontSize.XXL}
                             fontColor="ORANGE"
                             border
                             borderColor="ORANGE"

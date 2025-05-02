@@ -1,4 +1,4 @@
-import Button, { Align, Type } from "@components/Button"
+import Button, { Align, FontSize, Type } from "@components/Button"
 import Section from "@components/Section"
 import { FC } from "react"
 import { useForm } from "react-hook-form"
@@ -74,8 +74,10 @@ const NinethSection: FC = () => {
                     <Button
                         type={Type.SUBMIT}
                         text="Request Demo"
-                        size="LG"
-                        fontSize="SM"
+                        height={16}
+                        width={40}
+                        padding={4}
+                        fontSize={FontSize.XL}
                         bgColor="BLUE"
                         fontColor="WHITE"
                     />
