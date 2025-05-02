@@ -6,7 +6,7 @@ import user2 from "@components/SixthSection/assets/user2.png"
 import user3 from "@components/SixthSection/assets/user3.png"
 import default_user from "@components/SixthSection/assets/default_user.png"
 import Section from "@components/Section"
-import { FC, useState, useRef } from "react"
+import { FC, useState, useRef, Fragment } from "react"
 import Carousel, { ICarouselHandle } from "@components/Carousel"
 
 const SixthSection: FC = () => {
@@ -63,8 +63,8 @@ const SixthSection: FC = () => {
 
     return (
         <Section>
-            <div>
-                <div className="flex mb-20 items-center justify-between">
+            <Fragment>
+                <div className="flex mb-10 items-center justify-between">
                     <h2 style={{ color: colors.BLUE }} className="text-6xl">What everyone says</h2>
                     <div className="flex gap-4">
                         <Button
@@ -90,7 +90,7 @@ const SixthSection: FC = () => {
                         />
                     </div>
                 </div>
-            </div>
+            </Fragment>
 
             <Carousel
                 ref={carouselRef}

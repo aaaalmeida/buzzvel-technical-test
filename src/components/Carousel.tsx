@@ -82,7 +82,7 @@ const Carousel = forwardRef<ICarouselHandle, ICarouselProps>(
         return (
             <div
                 ref={containerRef}
-                className="flex gap-6 overflow-x-hidden scroll-smooth no-scrollbar"
+                className="flex gap-6 overflow-x-hidden pb-4 scroll-smooth no-scrollbar"
             >
                 {children.map((child, index) => (
                     <div key={index} className="shrink-0" style={{ minWidth: itemWidth }}>

@@ -7,9 +7,11 @@ type Size = "XM" | "SM" | "MD" | "LG"
 type IconPosition = "LEFT" | "RIGHT"
 type IconRotation = 0 | 1 | 2 | 3
 type FontSize = "SM" | "BASE" | "XL" | "XXL"
+type IType = "BUTTON" | "RESET" | "SUBMIT"
 
 interface IButton {
-    onClick: MouseEventHandler,
+    onClick?: MouseEventHandler,
+    type?: Type,
     text?: string,
     icon?: string,
     iconPosition?: IconPosition,
@@ -40,6 +42,12 @@ const fontSizeClasses = {
     XXL: "text-2xl"
 }
 
+export enum Type {
+    "BUTTON" = "button",
+    "RESET" = "reset",
+    "SUBMIT" = "submit"
+}
+
 export enum Align {
     "LEFT" = "left",
     "RIGHT" = "right",
@@ -61,6 +69,7 @@ const Button: FC<IButton> = ({
     circle = false,
     hoverBackgroundColor,
     hoverFontColor,
+    type = Type.BUTTON,
     align = Align.CENTER,
     fontSize = "BASE"
 }) => {
@@ -83,7 +92,8 @@ const Button: FC<IButton> = ({
                 ${sizeClasses[size]} 
                 ${circle ? "rounded-full" : "rounded"}
                 ${border ? "border-2 border-black" : ""}`}
-            onClick={onClick}>
+            onClick={onClick}
+            type={type}>
             {text && <p>{text}</p>}
             {icon &&
                 <Icon
