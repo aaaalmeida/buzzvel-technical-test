@@ -21,11 +21,12 @@ const Footer: FC = () => {
     const renderTableColumnTitle = () => {
         return columnTitle.map((element, index) => {
             return <Button
-                onClick={() => { }}
                 key={"rowTitle" + index}
                 text={element.n}
                 bgColor="BLUE"
-                size="LG"
+                height={16}
+                width={40}
+                padding={6}
                 hoverBackgroundColor="WHITE"
                 hoverFontColor="BLACK"
                 fontColor="WHITE"
@@ -39,11 +40,12 @@ const Footer: FC = () => {
         return tableMap.map((rows, rowIndex) => {
             return rows.map((element, elementIndex) => {
                 return <Button
-                    onClick={() => { }}
                     key={"tableElement" + rowIndex + elementIndex}
                     text={element.n}
                     bgColor="BLUE"
-                    size="LG"
+                    height={16}
+                    width={40}
+                    padding={6}
                     hoverBackgroundColor="WHITE"
                     hoverFontColor="BLACK"
                     fontColor="WHITE"
@@ -70,7 +72,6 @@ const Footer: FC = () => {
                 <p>uteach@2023. All rights reserved.</p>
                 <div className="flex gap-2">
                     <Button
-                        onClick={() => { }}
                         bgColor="BLUE"
                         fontColor="WHITE"
                         text="Terms"
@@ -78,7 +79,6 @@ const Footer: FC = () => {
                         hoverFontColor="BLACK"
                     />
                     <Button
-                        onClick={() => { }}
                         bgColor="BLUE"
                         fontColor="WHITE"
                         text="Privacy"
@@ -86,7 +86,6 @@ const Footer: FC = () => {
                         hoverFontColor="BLACK"
                     />
                     <Button
-                        onClick={() => { }}
                         bgColor="BLUE"
                         fontColor="WHITE"
                         text="Contact"
@@ -94,7 +93,6 @@ const Footer: FC = () => {
                         hoverFontColor="BLACK"
                     />
                     <Button
-                        onClick={() => { }}
                         bgColor="BLUE"
                         fontColor="WHITE"
                         text="EN"
@@ -104,7 +102,6 @@ const Footer: FC = () => {
                         hoverFontColor="BLACK"
                     />
                     <Button
-                        onClick={() => { }}
                         bgColor="BLUE"
                         fontColor="WHITE"
                         text="EN"
@@ -114,7 +111,6 @@ const Footer: FC = () => {
                         hoverFontColor="BLACK"
                     />
                     <Button
-                        onClick={() => { }}
                         bgColor="BLUE"
                         fontColor="WHITE"
                         icon="ri:accessibility-line"

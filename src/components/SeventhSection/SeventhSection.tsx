@@ -7,6 +7,7 @@ import img3 from "@assets/images/Picture3.png"
 import img4 from "@assets/images/Picture4.png"
 import Button from "@components/Button"
 
+// FIXME:
 const SeventhSection = () => {
     return (
         <Section flex>
@@ -42,9 +43,6 @@ const SeventhSection = () => {
                             width={40}
                             padding={6}
                         />
-                        {/* <button className="mt-4 px-4 py-2 border border-blue-500 text-blue-500 rounded-md hover:bg-blue-100 transition">
-                            Take Lesson
-                        </button> */}
                     </div>
 
                     <div className="col-span-2 grid grid-cols-2 gap-4">

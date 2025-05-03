@@ -21,23 +21,25 @@ const Section: FC<ISection> = ({
     const childrenArray = Array.isArray(children) ? children : [children]
 
     const renderChildren = () => {
+        const baseClass = ["px-4", (flex && direction === "row") ? "flex-1" : ""].join(" ")
+
         return childrenArray.map((element, index) => {
-            return <div key={index} className={'px-4'}>
+            return <div key={index} className={baseClass}>
                 {element}
             </div>
         })
     }
 
     const baseClasses = [
-        "p-10",
+        "p-10 gap-4",
         flex ? "flex justify-center items-center" : "text-center",
         flex ? (direction === "column" ? "flex-col" : "flex-row") : ""
-    ]
+    ].join(" ")
 
     return (
         <section
             style={{ backgroundColor: color[bgColor], color: color[fontColor] }}
-            className={baseClasses.join(" ")}>
+            className={baseClasses}>
             {renderChildren()}
         </section>
     )

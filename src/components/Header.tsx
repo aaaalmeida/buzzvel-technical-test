@@ -9,12 +9,12 @@ const Header: FC = () => {
                 <Button fontColor="BLUE" text="Products" />
                 <Button fontColor="BLUE" text="Solutions" />
                 <Button fontColor="BLUE" text="Pricing" />
-                <Button fontColor="BLUE" width={32} text="Resources" icon="weui:arrow-filled" rotateIcon={1} />
+                <Button fontColor="BLUE" width={32} text="Resources"
+                    icon="weui:arrow-filled" rotateIcon={1} />
             </div>
             <div className="flex gap-4">
                 <Button fontColor="BLUE" text="Login" />
-                <Button fontColor="BLUE" text="Sign Up Now"
-                border borderColor="BLUE" width={32} />
+                <Button fontColor="BLUE" text="Sign Up Now" width={32} />
             </div>
         </header>
     )
