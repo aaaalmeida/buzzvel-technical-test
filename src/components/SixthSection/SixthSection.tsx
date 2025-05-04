@@ -11,6 +11,8 @@ import Carousel, { ICarouselHandle } from "@components/Carousel"
 
 const SixthSection: FC = () => {
     const carouselRef = useRef<ICarouselHandle>(null)
+    const handleCarouselPrev = () => { carouselRef.current?.handlePrev() }
+    const handleCarouselNext = () => { carouselRef.current?.handlePrev() }
 
     // TODO: fetch simulation
     const [cards, setCards] = useState<IOpinionCard[]>([
@@ -68,7 +70,7 @@ const SixthSection: FC = () => {
                     <h2 style={{ color: colors.BLUE }} className="text-6xl">What everyone says</h2>
                     <div className="flex gap-4">
                         <Button
-                            onClick={() => carouselRef.current?.handlePrev()}
+                            onClick={handleCarouselPrev}
                             icon="weui:arrow-filled"
                             height={12}
                             width={12}
@@ -81,7 +83,7 @@ const SixthSection: FC = () => {
                             rotateIcon={2}
                         />
                         <Button
-                            onClick={() => carouselRef.current?.handleNext()}
+                            onClick={handleCarouselNext}
                             icon="weui:arrow-filled"
                             height={12}
                             width={12}
@@ -98,9 +100,9 @@ const SixthSection: FC = () => {
 
             <Carousel
                 ref={carouselRef}
-                itemsPerPage={3}
                 autoScroll
-                scrollInterval={10000}
+                scrollInterval={5000}
+                itemWidth={380}
             >
                 {renderOpinionCards()}
             </Carousel>

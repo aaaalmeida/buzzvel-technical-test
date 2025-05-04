@@ -24,7 +24,8 @@ export enum FontSize {
     "BASE" = "base",
     "SM" = "sm",
     "XL" = "xl",
-    "XXL" = "2xl"
+    "XXL" = "2xl",
+    "ULTRA" = "6xl"
 }
 
 interface IButton {

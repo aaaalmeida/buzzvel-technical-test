@@ -1,5 +1,4 @@
 import {
-    FC,
     ReactNode,
     useRef,
     useImperativeHandle,
@@ -9,10 +8,9 @@ import {
 
 interface ICarouselProps {
     children: ReactNode[]
-    itemsPerPage?: number
-    itemWidth?: number
     autoScroll?: boolean
     scrollInterval?: number
+    itemWidth?: number
 }
 
 export interface ICarouselHandle {
@@ -23,8 +21,7 @@ export interface ICarouselHandle {
 const Carousel = forwardRef<ICarouselHandle, ICarouselProps>(
     ({
         children,
-        itemsPerPage = 3,
-        itemWidth = 320,
+        itemWidth = 800,
         autoScroll = false,
         scrollInterval = 5000 // 5000ms = half sec
     }, ref // parent component reference, used to get next and previous buttons event
@@ -45,7 +42,7 @@ const Carousel = forwardRef<ICarouselHandle, ICarouselProps>(
             if (atEnd) {
                 container.scrollTo({ left: 0, behavior: "smooth" })
             } else {
-                container.scrollBy({ left: clientWidth, behavior: "smooth" })
+                container.scrollBy({ left: itemWidth, behavior: "smooth" })
             }
         }
 
@@ -53,14 +50,16 @@ const Carousel = forwardRef<ICarouselHandle, ICarouselProps>(
             const container = containerRef.current
             if (!container) return
 
+            // check if carousel is at start
             const atStart = container.scrollLeft === 0
             if (atStart) {
                 container.scrollTo({ left: container.scrollWidth, behavior: "smooth" })
             } else {
-                container.scrollBy({ left: -container.clientWidth, behavior: "smooth" })
+                container.scrollBy({ left: -itemWidth, behavior: "smooth" })
             }
         }
 
+        // control buttons action
         useImperativeHandle(ref, () => ({
             handlePrev,
             handleNext
@@ -69,18 +68,14 @@ const Carousel = forwardRef<ICarouselHandle, ICarouselProps>(
         // scroll effect
         useEffect(() => {
             if (!autoScroll) return
-
-            const interval = setInterval(() => {
-                handleNext()
-            }, scrollInterval)
-
+            const interval = setInterval(handleNext, scrollInterval)
             return () => clearInterval(interval)
         }, [autoScroll, scrollInterval])
 
         return (
             <div
                 ref={containerRef}
-                className="flex gap-6 overflow-x-hidden pb-4 scroll-smooth no-scrollbar"
+                className="flex gap-6 overflow-x-hidden w-full pb-4 scroll-smooth no-scrollbar"
             >
                 {children.map((child, index) => (
                     <div key={index} className="shrink-0" style={{ minWidth: itemWidth }}>

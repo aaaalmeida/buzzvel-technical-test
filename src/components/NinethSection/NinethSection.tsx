@@ -1,4 +1,4 @@
-import Button, { Align, FontSize, Type } from "@components/Button"
+import Button, { FontSize, Type } from "@components/Button"
 import Section from "@components/Section"
 import { FC } from "react"
 import { useForm } from "react-hook-form"
