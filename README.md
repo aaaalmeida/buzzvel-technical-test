@@ -1,54 +1,57 @@
-# React + TypeScript + Vite
+# Buzzvel Technical Test
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é a **página inicial responsiva** de uma empresa fictícia com atuação global, focada em **ensino e aprendizagem**. Ele foi desenvolvido como parte de uma **entrevista técnica**, utilizando as tecnologias **Vite**, **React**, **TypeScript** e **TailwindCSS**.
 
-Currently, two official plugins are available:
+This project is a **responsive frontpage** for a fictional global company focused on **education and learning**. It was built as part of a **technical interview**, using **Vite**, **React**, **TypeScript**, and **TailwindCSS**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🌍 Objetivo | Purpose
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Criar uma interface moderna, funcional e responsiva que represente a atuação de uma empresa de educação em escala mundial, com seções visuais e informativas, incluindo um carrossel interativo de depoimentos/banners.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+To build a modern, functional, and responsive interface that represents a global-scale educational company, with visual and informative sections including an interactive testimonials/banner carousel.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Tecnologias Utilizadas | Technologies Used
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [ESLint](https://eslint.org/)
+
+---
+
+## 📦 Scripts Disponíveis | Available Scripts
+
+No diretório do projeto, execute:
+
+In the project directory, you can run:
+
+### `npm run dev`
+
+Inicia o servidor de desenvolvimento.  
+Starts the development server.
+
+### `npm run build`
+
+Compila o projeto para produção.  
+Builds the project for production.
+
+### `npm run preview`
+
+Executa um preview da build de produção.  
+Runs a production preview of the build.
+
+### `npm run lint`
+
+Executa o linter para verificação de código.  
+Runs the linter to check code issues.
+
+---
+
+## 📄 Notas Finais | Final Notes
+Este projeto foi desenvolvido com fins demonstrativos para avaliação técnica.
+This project was built for demonstration purposes as part of a technical assessment.
