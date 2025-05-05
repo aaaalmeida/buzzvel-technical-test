@@ -6,7 +6,7 @@ import ReactPlayer from "react-player"
 const SecondSection = () => {
     return (
         <Section flex>
-            <div>
+            <>
                 <h2 className="text-6xl">An all-in-one app that makes it easier</h2>
                 <ul>
                     <li className="flex gap-4 my-2 text-xl">
@@ -32,9 +32,9 @@ const SecondSection = () => {
                     Find more about the app
                     <Icon icon={"line-md:arrow-up"} rotate={1} />
                 </a>
-            </div>
+            </>
 
-            <div >
+            <>
                 {/* TODO: replace with actual video link */}
                 <ReactPlayer url={"https://www.youtube.com/watch?v=7CTJcHjkq0E"} />
                 <div className="flex justify-content gap-4 -mt-8 z-10">
@@ -54,7 +54,7 @@ const SecondSection = () => {
                         link="#"
                         text="Lorem ipsum dolor sit amet. Vel quidem officiis eos et consectetur harum." />
                 </div>
-            </div>
+            </>
         </Section>
     )
 }

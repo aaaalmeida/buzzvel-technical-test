@@ -10,7 +10,7 @@ const FourthSection: FC = () => {
             <div className="text-left w-100%">
                 <h2 className="text-6xl">Meet international students & teachers</h2>
                 <p className="text-xl my-4">Ea saepe quaerat et tempora voluptatem cum quibusdam distinctio aut molestiae saepe? Ut dolores laborum est sunt voluptatem ea modi autem est dicta modi aut culpa consequatur qui repellendus placeat est perferendis iusto.</p>
-                <a href="#" className="text-blue-600">
+                <a href="#" className="text-blue-600 text-xl">
                     Explore teachers and students
                     <Icon icon="line-md:arrow-up" rotate={1} />
                 </a>

@@ -35,7 +35,7 @@ const Section: FC<ISection> = ({
     }
 
     const baseClasses = [
-        flex ? "flex justify-between items-center" : "text-center",
+        flex ? "flex justify-between items-center m-auto" : "text-center",
         flex ? (direction === "column" ? "flex-col" : "flex-row") : "",
         "p-10 gap-4 overflow-hidden w-full"
     ].join(" ")

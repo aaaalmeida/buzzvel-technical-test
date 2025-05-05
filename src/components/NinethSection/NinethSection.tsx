@@ -39,8 +39,7 @@ const NinethSection: FC = () => {
         <Section
             bgColor="ORANGE"
             fontColor="WHITE"
-            flex
-            direction="column"
+            flex direction="column"
         >
             <h2 className="font-bold text-6xl">
                 Ready for your next project?
